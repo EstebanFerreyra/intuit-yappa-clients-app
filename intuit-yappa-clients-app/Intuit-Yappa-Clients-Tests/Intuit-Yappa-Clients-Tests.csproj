@@ -23,4 +23,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Intuit-Yappa-Clients-Application\Intuit-Yappa-Clients-Application.csproj" />
+    <ProjectReference Include="..\Intuit-Yappa-Clients-Domain\Intuit-Yappa-Clients-Domain.csproj" />
+  </ItemGroup>
+
 </Project>

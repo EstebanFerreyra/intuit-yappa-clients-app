@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Intuit-Yappa-Clients-Domain\Intuit-Yappa-Clients-Domain.csproj" />
+  </ItemGroup>
+
 </Project>
