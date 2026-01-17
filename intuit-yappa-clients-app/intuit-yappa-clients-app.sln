@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit-Yappa-Clients-Api", "Intuit-Yappa-Clients-Api\Intuit-Yappa-Clients-Api.csproj", "{1F5FFE22-AD68-4FEC-867F-E8D6AB9DAF2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit-Yappa-Clients-Application", "Intuit-Yappa-Clients-Application\Intuit-Yappa-Clients-Application.csproj", "{DC2E860B-8CD5-4CFA-B080-B7B46D60A4AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit-Yappa-Clients-Domain", "Intuit-Yappa-Clients-Domain\Intuit-Yappa-Clients-Domain.csproj", "{F6AFA39A-66D8-48EA-A093-86E0A0464AD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit-Yappa-Clients-Infrastructure", "Intuit-Yappa-Clients-Infrastructure\Intuit-Yappa-Clients-Infrastructure.csproj", "{6181655F-1C10-475D-A371-E60A6043495E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit-Yappa-Clients-CrossCutting", "Intuit-Yappa-Clients-CrossCutting\Intuit-Yappa-Clients-CrossCutting.csproj", "{48F79B4E-C4A4-4B26-8E3E-B95007A87482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit-Yappa-Clients-Tests", "Intuit-Yappa-Clients-Tests\Intuit-Yappa-Clients-Tests.csproj", "{768F82CA-1D59-47DA-9AB4-36F0919BCE4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F5FFE22-AD68-4FEC-867F-E8D6AB9DAF2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F5FFE22-AD68-4FEC-867F-E8D6AB9DAF2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F5FFE22-AD68-4FEC-867F-E8D6AB9DAF2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F5FFE22-AD68-4FEC-867F-E8D6AB9DAF2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2E860B-8CD5-4CFA-B080-B7B46D60A4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2E860B-8CD5-4CFA-B080-B7B46D60A4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2E860B-8CD5-4CFA-B080-B7B46D60A4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2E860B-8CD5-4CFA-B080-B7B46D60A4AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6AFA39A-66D8-48EA-A093-86E0A0464AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6AFA39A-66D8-48EA-A093-86E0A0464AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6AFA39A-66D8-48EA-A093-86E0A0464AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6AFA39A-66D8-48EA-A093-86E0A0464AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6181655F-1C10-475D-A371-E60A6043495E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6181655F-1C10-475D-A371-E60A6043495E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6181655F-1C10-475D-A371-E60A6043495E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6181655F-1C10-475D-A371-E60A6043495E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F79B4E-C4A4-4B26-8E3E-B95007A87482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F79B4E-C4A4-4B26-8E3E-B95007A87482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F79B4E-C4A4-4B26-8E3E-B95007A87482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F79B4E-C4A4-4B26-8E3E-B95007A87482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{768F82CA-1D59-47DA-9AB4-36F0919BCE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{768F82CA-1D59-47DA-9AB4-36F0919BCE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{768F82CA-1D59-47DA-9AB4-36F0919BCE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{768F82CA-1D59-47DA-9AB4-36F0919BCE4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4D46B58-90EA-4899-8C9C-8F5B78890638}
+	EndGlobalSection
+EndGlobal
