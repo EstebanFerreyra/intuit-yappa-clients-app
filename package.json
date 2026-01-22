@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "lts": "^2.0.0"
+    "lts": "^2.0.0",
+    "react-router-dom": "^7.12.0"
   }
 }
