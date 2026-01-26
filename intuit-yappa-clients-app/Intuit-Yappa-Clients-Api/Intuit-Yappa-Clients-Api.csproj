@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Intuit-Yappa-Clients-Application\Intuit-Yappa-Clients-Application.csproj" />
+    <ProjectReference Include="..\Intuit-Yappa-Clients-CrossCutting\Intuit-Yappa-Clients-CrossCutting.csproj" />
     <ProjectReference Include="..\Intuit-Yappa-Clients-Infrastructure\Intuit-Yappa-Clients-Infrastructure.csproj" />
   </ItemGroup>
 

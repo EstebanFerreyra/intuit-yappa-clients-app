@@ -5,13 +5,15 @@ type DataTableProps<T extends { id: number | string }> = {
   columns: GridColDef<T>[];
   pageSizeOptions?: number[];
   checkboxSelection?: boolean;
+  onRowSelect?: (row: T | null) => void;
 };
 
 const DataTable = <T extends { id: number | string }>({
   rows,
   columns,
-  pageSizeOptions = [7, 14],
+  pageSizeOptions = [5],
   checkboxSelection = false,
+  onRowSelect,
 }: DataTableProps<T>) => {
   return (
     <DataGrid
@@ -23,6 +25,26 @@ const DataTable = <T extends { id: number | string }>({
         pagination: {
           paginationModel: { page: 0, pageSize: pageSizeOptions[0] },
         },
+      }}
+      sx={{ height: "100%" }}
+      disableMultipleRowSelection
+      onRowSelectionModelChange={(selection) => {
+        if (!onRowSelect) return;
+
+        const ids = selection.ids;
+
+        if (ids.size === 0) {
+          onRowSelect(null);
+          return;
+        }
+
+        const selectedId = Array.from(ids)[0];
+
+        const selectedRow = rows.find(
+          (row) => String(row.id) === String(selectedId),
+        );
+
+        onRowSelect(selectedRow ?? null);
       }}
     />
   );
