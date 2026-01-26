@@ -23,18 +23,6 @@ export const clientService = {
     return response.json();
   },
 
-  // async search(term: string): Promise<Client[]> {
-  //   const response = await fetch(
-  //     `${API_URL}/search?term=${encodeURIComponent(term)}`,
-  //   );
-
-  //   if (!response.ok) {
-  //     throw new Error("Error al buscar clientes");
-  //   }
-
-  //   return response.json();
-  // },
-
   async search(term: string): Promise<Client[]> {
     const response = await fetch(`${API_URL}/search?term=${term}`);
 
@@ -45,7 +33,7 @@ export const clientService = {
     return response.json();
   },
 
-  async create(client: Omit<Client, "id">): Promise<Client> {
+  async create(client: Omit<Client, "id">): Promise<void> {
     const response = await fetch(API_URL, {
       method: "POST",
       headers: {
@@ -57,8 +45,6 @@ export const clientService = {
     if (!response.ok) {
       throw new Error("Error al crear el cliente");
     }
-
-    return response.json();
   },
 
   async update(id: number, client: Client): Promise<void> {

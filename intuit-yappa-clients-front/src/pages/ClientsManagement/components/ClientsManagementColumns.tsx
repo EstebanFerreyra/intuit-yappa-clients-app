@@ -1,8 +1,12 @@
 import type { GridColDef } from "@mui/x-data-grid";
 import type { Client } from "../../../models/Client";
 import { formatDate, formatPhone } from "../../../utils/formatters";
+import { IconButton } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
 
-export const getColumnsClientsManagement = (): GridColDef<Client>[] => {
+export const getColumnsClientsManagement = (  
+  onEdit: (client: Client) => void,
+): GridColDef<Client>[] => {
   return [
     { field: "nombre", headerName: "Nombre", width: 130 },
     { field: "apellido", headerName: "Apellido", width: 130 },
@@ -21,11 +25,21 @@ export const getColumnsClientsManagement = (): GridColDef<Client>[] => {
       width: 200,
       valueFormatter: (value) => formatPhone(value),
     },
-    {
-      field: "Acciones",
+     {
+      field: "acciones",
       headerName: "Acciones",
       width: 100,
-      valueFormatter: () => "Editar",
+      sortable: false,
+      filterable: false,
+      renderCell: (params) => (
+        <IconButton
+          color="primary"
+          onClick={() => onEdit(params.row)}
+        >
+          <EditIcon />
+        </IconButton>
+      ),
     },
+
   ];
 };

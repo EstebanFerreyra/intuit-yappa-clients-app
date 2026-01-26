@@ -8,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import Spinner from "../../components/Spinner/Spinner";
 import { Autocomplete, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import ClientModal from "./components/ClientModal";
 
 const ClientsManagement = () => {
   const [clients, setClients] = useState<Client[]>([]);
@@ -17,20 +18,37 @@ const ClientsManagement = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedClient, setSelectedClient] = useState<Client | null>(null);
+  const [openModal, setOpenModal] = useState(false);
+  const [modalMode, setModalMode] = useState<ClientModalMode>("create");
 
-  const columns = getColumnsClientsManagement();
+  const handleEdit = (client: Client) => {
+    setSelectedClient(client);
+    setModalMode("edit");
+    setOpenModal(true);
+  };
+
+  const columns = getColumnsClientsManagement(handleEdit);
 
   const navigate = useNavigate();
 
+  type ClientModalMode = "create" | "edit";
+
+  const fetchClients = async () => {
+    try {
+      setLoading(true);
+      const data = await clientService.getAll();
+      setClients(data);
+      setFilteredClients(data);
+    } catch (err) {
+      console.log(err);
+      setError("Error al obtener los clientes");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    clientService
-      .getAll()
-      .then((data) => {
-        setClients(data);
-        setFilteredClients(data);
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
+   fetchClients();
   }, []);
 
   useEffect(() => {
@@ -83,7 +101,7 @@ const ClientsManagement = () => {
               onInputChange={(_, value) => handleSearchInput(value)}
               onChange={(_, selectedClient) => {
                 if (!selectedClient) {
-                  setFilteredClients(clients); 
+                  setFilteredClients(clients);
                   return;
                 }
 
@@ -117,7 +135,17 @@ const ClientsManagement = () => {
             />
           </Grid>
           <Grid display="flex" gap={1}>
-            <Button variant="contained">Agregar Usuario</Button>
+            <Button
+              variant="contained"
+              onClick={() => {
+                setModalMode("create");
+                setSelectedClient(null);
+                setOpenModal(true);
+              }}
+            >
+              Agregar Usuario
+            </Button>
+
             <Button
               variant="contained"
               disabled={!selectedClient}
@@ -132,6 +160,18 @@ const ClientsManagement = () => {
           </Grid>
         </Grid>
       </div>
+      {openModal && (
+        <ClientModal
+          open={openModal}
+          mode={modalMode}
+          client={selectedClient}
+          onClose={() => setOpenModal(false)}
+          onSuccess={() => {
+            setOpenModal(false);
+            fetchClients();
+          }}
+        />
+      )}
     </div>
   );
 };
